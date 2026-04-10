@@ -1,4 +1,4 @@
-// modules/client.js
+// pages/insert_client.js
 import { setupPhoneMask, setupCpfMask, setupCurrencyMask, setupPercentMask } from '../common/format.js';
 
 /*
@@ -89,7 +89,7 @@ export function initializeClientForm() {
             await checkCpfExists();
         });
         
-        // Opcional: verificar ao sair do campo CPF (blur)
+        // Verificar ao sair do campo CPF (blur)
         cpfInput.addEventListener('blur', async function() {
             await checkCpfExists();
         });

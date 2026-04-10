@@ -140,7 +140,7 @@ async function loadPage(pageName) {
     
     try {
         // converte nome da página para nome do arquivo
-        const fileName = pageName.replace(/-/g, '_'); // insert-company → insert_company
+        const fileName = pageName.replace(/-/g, '_'); // insert-client → insert_client
         const filePath = `pages/${fileName}.html`;
         
         console.log(`📂 Fetching: ${filePath}`);

@@ -1,0 +1,32 @@
+<!-- pages/loan_history.html -->
+<div>
+    <header class="page-header">
+        <h1>Histórico de Empréstimos</h1>
+    </header>
+    
+    <main class="content-page">
+        <!-- Tabela de empréstimos -->
+        <div class="table-container">
+            <table class="loan-history-table" id="loan-history-table">
+                <thead>
+                    <tr>
+                        <th>ID do Empréstimo</th>
+                        <th>Data</th>
+                        <th>CPF do Cliente</th>
+                        <th>Valor do Empréstimo</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="loan-history-body">
+                    <tr>
+                        <td colspan="6" style="text-align: center;">Carregando dados...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Mensagem de erro ou vazio -->
+        <div id="loan-history-message" style="display: none;" class="message"></div>
+    </main>
+</div>

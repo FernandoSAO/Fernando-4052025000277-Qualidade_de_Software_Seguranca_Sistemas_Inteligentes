@@ -1,0 +1,165 @@
+<!-- pages/insert_client.html -->
+<div class="page-content">
+    <header class="page-header">
+        <h1>Cadastro de Cliente</h1>
+    </header>
+    <main class="content-page">
+        <form id="client-form" class="client-form">
+            <!-- Seção 1: Informações Pessoais -->
+            <div class="form-section">
+                <h3 class="section-header">Informações Pessoais</h3>
+                <div class="form-grid">
+                    <!-- Nome Completo -->
+                    <div class="form-group">
+                        <label for="client-full-name">Nome Completo:</label>
+                        <input type="text" 
+                            id="client-full-name" 
+                            name="client_full_name"
+                            placeholder="Digite seu nome completo"
+                            maxlength="100"
+                            required>
+                    </div>
+                    
+                    <!-- CPF com botão de verificação -->
+                    <div class="form-group">
+                        <label for="client-cpf">CPF:</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" 
+                                id="client-cpf" 
+                                name="client_cpf"
+                                placeholder="000.000.000-00"
+                                maxlength="14"
+                                style="flex: 1;"
+                                required>
+                            <button type="button" id="check-cpf-btn" class="secondary-btn" style="white-space: nowrap;">
+                                Verificar CPF
+                            </button>
+                        </div>
+                        <small id="cpf-check-result" style="display: block; margin-top: 5px;"></small>
+                    </div>
+                    
+                    <!-- Gênero -->
+                    <div class="form-group">
+                        <label for="client-gender">Gênero:</label>
+                        <select id="client-gender" name="client_gender" required>
+                            <option value="">Selecione...</option>
+                            <option value="male">Masculino</option>
+                            <option value="female">Feminino</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Data de Nascimento -->
+                    <div class="form-group">
+                        <label for="client-birthdate">Data de Nascimento:</label>
+                        <input type="date"
+                            id="client-birthdate"
+                            name="client_birthdate"
+                            required>
+                    </div>
+
+                    <!-- Telefone -->
+                    <div class="form-group">
+                        <label for="client-cell-phone">Telefone:</label>
+                        <input type="tel"
+                            id="client-cell-phone"
+                            name="client_cell_phone"
+                            placeholder="(11) 99999-9999"
+                            required>
+                    </div>
+
+                    <!-- Situação de Moradia (dropdown do backend) -->
+                    <div class="form-group">
+                        <label for="client-home-ownership">Situação de Moradia:</label>
+                        <select id="client-home-ownership" name="client_home_ownership" required>
+                            <option value="">Carregando...</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Seção 2: Informações Profissionais -->
+            <div class="form-section">
+                <h3 class="section-header">Informações Acadêmicas e Profissionais</h3>
+                <div class="form-grid">
+                    <!-- Nível de Educação (dropdown do backend) -->
+                    <div class="form-group">
+                        <label for="client-education">Nível de Educação:</label>
+                        <select id="client-education" name="client_education" required>
+                            <option value="">Carregando...</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Profissão (opcional) -->
+                    <div class="form-group">
+                        <label for="client-profession">Profissão <span style="font-weight: normal;">(opcional)</span>:</label>
+                        <input type="text" 
+                            id="client-profession" 
+                            name="client_profession"
+                            placeholder="Sua profissão"
+                            maxlength="60">
+                    </div>
+                    
+                    <!-- Experiência Profissional (anos) -->
+                    <div class="form-group">
+                        <label for="client-emp-exp">Experiência Profissional (anos):</label>
+                        <input type="number" 
+                            id="client-emp-exp" 
+                            name="client_emp_exp"
+                            placeholder="0 a 50 anos"
+                            min="0"
+                            max="50"
+                            step="0.5"
+                            required>
+                    </div>
+                    
+
+                </div>
+            </div>
+            
+            <!-- Seção 3: Informações Financeiras -->
+            <div class="form-section">
+                <h3 class="section-header">Informações Financeiras</h3>
+                <div class="form-grid">
+
+                    <!-- Renda Anual -->
+                    <div class="form-group">
+                        <label for="client-income">Renda Anual (R$):</label>
+                        <input type="text" 
+                            id="client-income" 
+                            name="client_income"
+                            placeholder="R$ 0,00"
+                            required>
+                    </div>
+                    
+                    <!-- Nota de Crédito (Score) -->
+                    <div class="form-group">
+                        <label for="client-credit-score">Nota de Crédito (Score):</label>
+                        <input type="number" 
+                            id="client-credit-score" 
+                            name="client_credit_score"
+                            placeholder="300 a 850"
+                            min="300"
+                            max="850"
+                            required>
+                    </div>
+                    
+                    <!-- Histórico de Inadimplência -->
+                    <div class="form-group">
+                        <label for="client-previous-default">Já teve empréstimo com inadimplência?</label>
+                        <select id="client-previous-default" name="client_previous_default" required>
+                            <option value="">Selecione...</option>
+                            <option value="0">Não</option>
+                            <option value="1">Sim</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">Cadastrar Cliente</button>
+                <button type="reset" class="cancel-btn">Limpar</button>
+            </div>
+        </form>
+    </main>
+</div>

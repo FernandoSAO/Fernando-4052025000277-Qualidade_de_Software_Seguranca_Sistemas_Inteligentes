@@ -1,0 +1,16 @@
+[2026-04-09 21:59:10,669] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.208:5000 - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-09 21:59:10,670] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-09 21:59:10,671] INFO _log() L96    * Restarting with stat - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-09 21:59:22,814] INFO get_information() L38   Informações de frontend enviadas com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\info_endpoints.py L38  
+[2026-04-09 21:59:22,825] INFO _log() L96   127.0.0.1 - - [09/Apr/2026 21:59:22] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-09 22:01:24,969] INFO get_information() L38   Informações de frontend enviadas com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\info_endpoints.py L38  
+[2026-04-09 22:01:24,969] INFO _log() L96   127.0.0.1 - - [09/Apr/2026 22:01:24] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-09 22:02:10,371] INFO get_information() L38   Informações de frontend enviadas com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\info_endpoints.py L38  
+[2026-04-09 22:02:10,372] INFO _log() L96   127.0.0.1 - - [09/Apr/2026 22:02:10] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-09 22:02:20,443] INFO get_information() L38   Informações de frontend enviadas com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\info_endpoints.py L38  
+[2026-04-09 22:02:20,443] INFO _log() L96   127.0.0.1 - - [09/Apr/2026 22:02:20] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-09 22:02:36,007] INFO _log() L96   127.0.0.1 - - [09/Apr/2026 22:02:36] "OPTIONS /getLoanHistory HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-09 22:02:36,320] INFO _log() L96   127.0.0.1 - - [09/Apr/2026 22:02:36] "GET /getLoanHistory HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\venv\lib\site-packages\werkzeug\_internal.py L96  

@@ -1,36 +1,21 @@
-# Front-end
+# Front-end de Aprovação de Empréstimo com base no treinamento com machine learning do dataset Loan Approval Classification
 
-Esta front tem como objetivo a gestão de faturas de recebimento e pagamento.
+link dataset: https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data
 
-Tem como funcionalidade das páginas:
+Tem como funcionalidades:
 
-    - inclusão de faturas de pagamento (utilizando a API: http://localhost:5000/addPaymentInvoice  método: post);
-    - inclusão de faturas de recebimento (utilizando a API: http://localhost:5000/addReceiptInvoice  método: post);
-    - inclusão de empresas (utilizando a API: http://localhost:5000/addCompany  método: post);
-    - busca de logradouro, bairro e UF a partir do CEP, utilizando a API dos Correios (ViaCEP) (utilizando a API: http://localhost:5000/getCEPInformation  método: get);
-    - busca por faturas de pagamento a partir de um sistema de filtros (utilizando a API: http://localhost:5000/getPaymentInvoicesByFilters  método: get);
-    - busca por faturas de recebimento a partir de um sistema de filtros (utilizando a API: http://localhost:5000/getReceiptInvoicesByFilters  método: get);
-    - busca por empresas a partir de um sistema de filtros (utilizando a API: http://localhost:5000/getCompaniesByFilters  método: get);
-    - alteração do estado de faturas de pagamento (aberto -> fechado) (utilizando a API: http://localhost:5000/markPaymentInvoicePaid  método: patch);
-    - alteração do estado de faturas de recebimento (aberto -> fechado) (utilizando a API: http://localhost:5000/markReceiptInvoicePaid  método: patch);
-    - exclusão de faturas de pagamento (utilizando a API: http://localhost:5000/deletePaymentInvoice  método: delete);
-    - exclusão de faturas de recebimento (utilizando a API: http://localhost:5000/deleteReceiptInvoice  método: delete);
-    - exclusão de empresas (utilizando a API: http://localhost:5000/deleteCompany  método: delete);
+    - obtém informações para preenchimento de campos dropdown para o frontend (URL: /getInformation  método: get);
+    - inclusão de clientes ao banco de dados (URL: /registerClient  método: post);
+    - verificação se cpf está na tabela de clientes (URL: /checkCPF  método: post);
+    - inclusão de dados de empréstimo do cliente ao banco de dados com a verificação de aprovação utilizando o modelo treinado
+    (URL: /registerLoanData  método: post);
+    - obtém o histórico de testes de empréstimos feitos do banco de dados (URL: /getLoanHistory  método: get);
+    - remove teste de empréstimo a partir do id do empréstimo (URL: /deleteLoan  método: delete);
 
-Fluxograma do sistema:
-
-![fluxograma](/fluxogramas/arquitetura_aplicação.png)
+O sitema foi contruído em python utilizando como base dados o SQLite e mircoframework flask.
 
 ---
 
 ## Como executar 
 
-Certifique-se de ter o [Docker](https://docs.docker.com/engine/install/) instalado e em execução em sua máquina.
-
-Navegue até o diretório que contém o Dockerfile no terminal e seus arquivos de aplicação e Execute como administrador o seguinte comando para construir a imagem Docker:
-
-$ docker build -t front_end .
-Uma vez criada a imagem, para executar o container basta executar, como administrador, seguinte o comando:
-
-$ docker run -d -p 8080:80 front_end
-Uma vez executando, para acessar o front-end, basta abrir o http://localhost:8080/#/ no navegador.
+Recomendado o uso de ferramentas como o Go Live do Vscode 

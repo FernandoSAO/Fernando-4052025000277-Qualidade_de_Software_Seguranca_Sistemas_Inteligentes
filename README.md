@@ -1,4 +1,6 @@
-# Diretório de Aprovação de Empréstimo com base no treinamento com machine learning do dataset Loan Approval Classification
+# Repositório com o projeto de Aprovação de Empréstimo, com base no treinamento com machine learning do dataset Loan Approval Classification
+PUC-RJ Pós Graduação em Engenharia de Software
+Qualidade de Software, Segurança e Sistemas Inteligentes
 
 link dataset: https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data
 

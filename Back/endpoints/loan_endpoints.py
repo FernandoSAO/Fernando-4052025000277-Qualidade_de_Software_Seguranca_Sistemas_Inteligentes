@@ -5,7 +5,7 @@ from model import Session, Client, LoanData
 from sqlalchemy.exc import IntegrityError
 
 # definindo tag
-loan_tag = Tag(name="LoanTest", description="Inserção de clientes na base de dados")
+loan_tag = Tag(name="LoanTest", description="Inserção de detalhes do empréstimo e resultado seguindo o modelo")
 
 def configure_loan_test_endpoints(app):
     """

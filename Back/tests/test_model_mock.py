@@ -6,7 +6,7 @@ from datetime import date
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from model.loan_predictor import get_predictor  # ← Corrigido: services/
+from model.loan_predictor import get_predictor
 from tests.fixtures.test_data import MockClient, MockLoanData, get_test_cases
 
 

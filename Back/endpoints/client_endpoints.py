@@ -77,9 +77,9 @@ def configure_client_endpoints(app):
                 return ErrorSchema(message="CPF inválido. Deve conter 11 dígitos numéricos.").dict(), 400
 
             # Gênero
-            valid_genders = ["masculino", "feminino", "male", "female"]
+            valid_genders = ["male", "female"]
             if client_gender.lower() not in [g.lower() for g in valid_genders]:
-                return ErrorSchema(message="Gênero inválido. Opções: masculino ou feminino.").dict(), 400
+                return ErrorSchema(message="Gênero inválido. Opções: male ou female.").dict(), 400
             gender_standard = "male" if client_gender.lower() in ["masculino", "male"] else "female"
 
             # Data de Nascimento
@@ -112,7 +112,7 @@ def configure_client_endpoints(app):
                 return ErrorSchema(message="Valor de inadimplência inválido. Use 0 (Não) ou 1 (Sim).").dict(), 400
 
             # Nível de Educação
-            valid_education = ["Associate", "Bachelor", "Doctorate", "High School", "Master", "No Education"]
+            valid_education = ["Associate", "Bachelor", "Doctorate", "High School", "Master"]
             if client_education not in valid_education:
                 return ErrorSchema(message=f"Educação inválida. Opções: {', '.join(valid_education)}").dict(), 400
 

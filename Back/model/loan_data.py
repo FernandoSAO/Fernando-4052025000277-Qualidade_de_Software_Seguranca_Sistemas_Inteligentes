@@ -3,8 +3,7 @@ from sqlalchemy import Column, String, Integer, DateTime, Float, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from model.base import Base
-from model.loan_predictor import get_predictor  # ← Corrigido: services/
-
+from model.loan_predictor import get_predictor
 
 class LoanData(Base):
     
@@ -19,7 +18,7 @@ class LoanData(Base):
     cb_person_cred_hist_length = Column(Integer)
        
     # RESULTADO DA PREDIÇÃO
-    loan_status = Column(Integer)  # 0 = Aprovado, 1 = Negado (consistente com o modelo)
+    loan_status = Column(Integer)  # 0 = Aprovado, 1 = Negado
     
     # METADADOS
     insertion_date = Column(DateTime, default=datetime.now)
@@ -65,6 +64,6 @@ class LoanData(Base):
         # Retornar com a lógica do modelo (0 = APROVADO)
         return {
             'loan_status': prediction,
-            'approved': prediction == 0,   # ← 0 = aprovado
+            'approved': prediction == 0,   # 0 = aprovado
             'message': 'Empréstimo aprovado!' if prediction == 0 else 'Empréstimo negado devido ao risco de default.'
         }

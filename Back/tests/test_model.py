@@ -11,7 +11,6 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 from model.loan_predictor import get_predictor
 
-
 class TestModelAccuracy:
     """Testes para verificar a acurácia do modelo exportado"""
     

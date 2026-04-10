@@ -6,7 +6,7 @@ from datetime import date
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from model.loan_predictor import LoanPredictor  # ← Corrigido: model → services
+from model.loan_predictor import LoanPredictor
 
 
 class TestConversions:

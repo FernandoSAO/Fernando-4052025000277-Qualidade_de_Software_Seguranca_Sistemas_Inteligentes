@@ -12,7 +12,7 @@ class Client(Base):
     client_birthdate = Column(Date, nullable=False) # data de nascimento em YYYY-MM-DD
     client_gender = Column(String(20), nullable=False)  # "male" ou "female"
     client_cell_phone = Column(String(20)) # telefone
-    client_education = Column(String(50), nullable=False)  # Educação: Bachelor, Doctorate, High School, Master, etc.
+    client_education = Column(String(50), nullable=False)  # Educação: Associate, Bachelor, Doctorate, High School ou Master
     client_income = Column(Float, nullable=False)  # Renda anual
     client_profession = Column(String(100)) # profissão
     client_emp_exp = Column(Float, nullable=False)  # Anos de experiência

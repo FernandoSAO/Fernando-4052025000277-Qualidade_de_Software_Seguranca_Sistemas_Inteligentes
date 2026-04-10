@@ -1,86 +1,95 @@
-# Repositório com o projeto de Aprovação de Empréstimo, com base no treinamento com machine learning do dataset Loan Approval Classification
-PUC-RJ Pós Graduação em Engenharia de Software
-Qualidade de Software, Segurança e Sistemas Inteligentes
-
-link dataset: https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data
-
-Tem como funcionalidades:
-
-    - obtém informações para preenchimento de campos dropdown para o frontend (URL: /getInformation  método: get);
-    - inclusão de clientes ao banco de dados (URL: /registerClient  método: post);
-    - verificação se cpf está na tabela de clientes (URL: /checkCPF  método: post);
-    - inclusão de dados de empréstimo do cliente ao banco de dados com a verificação de aprovação utilizando o modelo treinado
-    (URL: /registerLoanData  método: post);
-    - obtém o histórico de testes de empréstimos feitos do banco de dados (URL: /getLoanHistory  método: get);
-    - remove teste de empréstimo a partir do id do empréstimo (URL: /deleteLoan  método: delete);
-
-O backend do sitema foi contruído em python utilizando como base dados o SQLite e mircoframework flask.
-O frontend do sistema foi construído utilizando HTML, CSS e JavaScript
-O treinamento do modelo foi feito utilizando o google collab em python utilizando o método de classificação com os modelos KNN, CART, NB e SVM
-
-# Sistema de Análise de Crédito para Empréstimos com base no treinamento de dataset com machine learning
+# Sistema de Análise de Crédito para Empréstimos com Machine Learning
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Flask](https://img.shields.io/badge/Flask-2.3.3-green)](https://flask.palletsprojects.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-link dataset: https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data
+**Dataset:** [Loan Approval Classification Dataset](https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data)
 
 **Status do Projeto:** ✅ Concluído
 
-## 📖 Visão Geral
+**Instituição:** PUC-RJ | Pós-Graduação em Engenharia de Software  
+**Disciplina:** Qualidade de Software, Segurança e Sistemas Inteligentes
 
-Este projeto é um MVP (Produto Mínimo Viável) de um sistema de análise de crédito. O objetivo é automatizar a decisão de aprovação ou rejeição de pedidos de empréstimo, combinando regras de negócio com um modelo de Machine Learning, com base no aprendizado
-do dataset Loan Approval Classification Dataset
+---
 
-O sistema é composto por:
-- **Backend**: Uma API RESTful desenvolvida em Flask que gerencia clientes, solicitações de empréstimo e hospeda o modelo de ML.
-- **Frontend**: Uma interface web para cadastro de clientes, simulação de empréstimos e visualização do histórico.
-- **Arquivo do Google Collab com os testes e treinamentos utilizando machine learnig**: Contem a Remoção de vazamento de dados por feature determinística, Label Encoding e One-Hot Encoding, Comparação dos modelos Pré e Pós Otimização dos HiperparÂmetros, detalhes
-  do modelo escolhido e testes finais
-- **Link vídeo do youtube com apresentação do projeto: (link)
+## 📖 Visão Geral do Projeto
 
-## 🎯 Funcionalidades Principais
+Este projeto é um **MVP (Produto Mínimo Viável)** de um sistema de análise de crédito. O objetivo é automatizar a decisão de aprovação ou rejeição de pedidos de empréstimo, combinando **regras de negócio** com um **modelo de Machine Learning** treinado a partir do dataset *Loan Approval Classification Dataset*.
 
-*   **Cadastro de Clientes**: Registra informações pessoais (CPF, nome, etc.) e financeiras (renda, score, etc.).
-*   **Simulação de Empréstimo**: Permite solicitar um empréstimo e obtém uma decisão (Aprovado/Negado) em tempo real com base no modelo e em regras de negócio.
-*   **Histórico de Transações**: Exibe uma tabela com todas as simulações de empréstimo já realizadas.
-*   **Verificação de cpf no sistema**: Verifica se cpf já foi registrado para evitar preenchimento desnecessário de cliente para cpf repetidos ou a falta do cpf para registro do empréstimo
-*   **Regra de Negócio**: Clientes com `default` (inadimplência) anterior são automaticamente negados.
-*   **API RESTful**: Endpoints documentados para integração com outros sistemas.
+O projeto está dividido em três partes principais:
+
+1.  **🔬 Análise e Treinamento (Google Colab):** Notebook interativo com toda a etapa de exploração, tratamento de dados, treinamento de múltiplos modelos e escolha do melhor.
+2.  **⚙️ Backend (Python + Flask):** API RESTful responsável por gerenciar os dados (clientes, empréstimos) e hospedar o modelo de ML treinado para fazer as predições.
+3.  **🖥️ Frontend (HTML, CSS, JS):** Interface web amigável para usuários realizarem cadastros, simulações de crédito e consultarem o histórico.
+
+---
+
+## 🎯 Funcionalidades do Sistema
+
+### Aplicação Web (Frontend + Backend)
+- **Cadastro de Clientes:** Registra informações pessoais (CPF, nome, data de nascimento) e financeiras (renda, score de crédito, experiência profissional, etc.).
+- **Verificação de CPF:** Antes de cadastrar ou simular um empréstimo, o sistema verifica se o CPF já existe no banco de dados, evitando duplicidades.
+- **Simulação de Empréstimo:** Usuário solicita um valor e informa os dados da operação. O sistema retorna a decisão (Aprovado/Negado) em tempo real.
+- **Histórico de Transações:** Exibe uma tabela com todas as simulações de empréstimo já realizadas, permitindo visualizar datas, valores e resultados.
+- **Regra de Negócio:** Implementada diretamente no backend: clientes com histórico de inadimplência (`default` anterior) são **automaticamente negados**, sem necessidade de consulta ao modelo de ML.
+- **API RESTful:** Endpoints bem definidos para integração com outros sistemas ou futuros aplicativos.
+
+### Análise e Modelagem de Dados (Google Colab)
+- **Tratamento de Dados:** Remoção de vazamento de dados (*data leakage*) por feature determinística (`previous_default`).
+- **Pré-processamento:** Aplicação de `Label Encoding` e `One-Hot Encoding` para transformar variáveis categóricas.
+- **Comparação de Modelos:** Avaliação do desempenho base de quatro algoritmos: **KNN**, **CART (Árvore de Decisão)**, **Naive Bayes (NB)** e **SVM**.
+- **Escalonamento de Dados:** Teste com `StandardScaler` (padronização) e `MinMaxScaler` (normalização) para identificar a melhor abordagem para cada modelo.
+- **Otimização de Hiperparâmetros:** Busca pelos melhores parâmetros para os modelos **KNN**, **CART** e **Naive Bayes** (o SVM foi excluído da otimização devido ao seu alto custo computacional).
+- **Seleção do Melhor Modelo:** O modelo escolhido para produção foi o **CART normalizado (`MinMaxScaler`)**, com os parâmetros:
+    - `criterion`: `entropy`
+    - `max_depth`: `10`
+    - `min_samples_split`: `5`
+- **Exportação do Modelo:** O modelo final (treinado com 100% dos dados), juntamente com o `scaler` e metadados, foi serializado usando a biblioteca `joblib` em um único arquivo `.pkl`, pronto para ser consumido pelo backend.
+
+---
 
 ## 🛠️ Tecnologias Utilizadas
 
+### Machine Learning (Google Colab)
+- **Python 3.10**
+- **Pandas, NumPy** (Manipulação de dados)
+- **Scikit-learn** (Modelos, pré-processamento, métricas)
+- **Joblib** (Exportação do modelo)
+
 ### Backend
-*   **Python 3.10**
-*   **Flask** - Framework web para a API.
-*   **SQLite** - Banco de dados SQLite.
+- **Python 3.10**
+- **Flask** (Framework web para a API)
+- **SQLite** (Banco de dados relacional)
+- **SQLAlchemy** (ORM para interação com o banco)
+- **Pydantic** (Validação de dados)
 
-# Frontend
-*   **HTML5, CSS3 e JavaScript (ES6+)**
-*   **Fetch API** - Para comunicação com o backend.
+### Frontend
+- **HTML5, CSS3**
+- **JavaScript (ES6+)**
+- **Fetch API** (Comunicação com o backend)
 
-### Machine Learning
-*   **Modelos Utilizados** - `KNN`, `CART`, `Naive Bayes` e `SVM`.
-*   **Otimizações** - Paronização e Normalização
-*   **Otimização dos hiperparâmetros** - `KNN`, `CART` e `Naive Bayes` (Pelo fato do SVM demorar muito tempo, foi o único que não teve otimização)
-*   **Escolha do melhor modelo e sua exportação para uso na APP** - `CART`
+### Testes e Qualidade
+- **Pytest** (Testes unitários e de integração no backend)
 
-
-
-### Testes
-*   **Pytest** - Framework para testes unitários e de integração.
+---
 
 ## 📂 Estrutura do Projeto
 
 ```bash
 .
-├── Back/
-│   ├── app.py                  # Arquivo principal da aplicação Flask
-│   ├── model/                  # Modelos SQLAlchemy (Client, LoanData)
-│   ├── schemas.py              # Schemas Pydantic para validação
-│   ├── services/               # Lógica de negócio (LoanPredictor)
-│   ├── ml_model/               # Modelo de ML treinado (.pkl) e metadados
-│   ├── tests/                  # Testes unitários e de integração (pytest)
-│   └── requirements.txt        # Dependências do projeto Python
-├── Front/                      # Arquivos estáticos do frontend (HTML, CSS, JS)
-└── README.md                   # Documentação do projeto
+├── Back/                          # Backend da aplicação
+│   ├── app.py                     # Arquivo principal da API Flask
+│   ├── model/                     # Modelos SQLAlchemy (Client, LoanData)
+│   ├── schemas.py                 # Schemas Pydantic para validação
+│   ├── services/                  # Lógica de negócio (LoanPredictor)
+│   ├── ml_model/                  # Modelo de ML treinado (.pkl) e metadados
+│   ├── tests/                     # Testes unitários e de integração (pytest)
+│   └── requirements.txt           # Dependências do projeto Python
+├── Front/                         # Frontend da aplicação
+│   ├── index.html                 # Página principal
+│   ├── styles.css                 # Estilos CSS
+│   └── scripts/                   # Arquivos JavaScript modulares
+├── Analise_ML/                    # (Recomendado) Notebook do Google Colab
+│   └── loan_analysis.ipynb        # Análise, treinamento e exportação do modelo
+└── README.md                      # Documentação do projeto

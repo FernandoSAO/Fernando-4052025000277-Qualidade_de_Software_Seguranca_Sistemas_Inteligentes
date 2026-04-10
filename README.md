@@ -80,16 +80,17 @@ O projeto está dividido em três partes principais:
 .
 ├── Back/                          # Backend da aplicação
 │   ├── app.py                     # Arquivo principal da API Flask
-│   ├── model/                     # Modelos SQLAlchemy (Client, LoanData)
+│   ├── model/                     # Modelos SQLAlchemy (Client, LoanData, LoanPredictor)
 │   ├── schemas.py                 # Schemas Pydantic para validação
-│   ├── services/                  # Lógica de negócio (LoanPredictor)
 │   ├── ml_model/                  # Modelo de ML treinado (.pkl) e metadados
 │   ├── tests/                     # Testes unitários e de integração (pytest)
 │   └── requirements.txt           # Dependências do projeto Python
 ├── Front/                         # Frontend da aplicação
 │   ├── index.html                 # Página principal
-│   ├── styles.css                 # Estilos CSS
-│   └── scripts/                   # Arquivos JavaScript modulares
+│   ├── css/                       # Componentes HTML (header e sidebar)
+│   ├── css/                       # Estilos CSS
+│   ├── js/                        # Arquivos JavaScript modulares
+│   └── pages/                     # Páginas HTML
 ├── Analise_ML/                    # (Recomendado) Notebook do Google Colab
 │   └── loan_analysis.ipynb        # Análise, treinamento e exportação do modelo
 └── README.md                      # Documentação do projeto

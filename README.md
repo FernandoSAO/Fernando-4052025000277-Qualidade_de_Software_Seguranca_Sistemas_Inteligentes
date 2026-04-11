@@ -10,6 +10,7 @@
 
 **Instituição:** PUC-RJ | Pós-Graduação em Engenharia de Software  
 **Disciplina:** Qualidade de Software, Segurança e Sistemas Inteligentes
+""Link do Vídeo de Apresentação:** https://youtu.be/Zrq2sZ8K2Yc 
 
 ---
 

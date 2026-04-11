@@ -118,7 +118,7 @@ cd Sprint\ 4/MVP/Back
 ### 2. Criar ambiente virtual
 
 ```bash
-python -m venv venv
+python -3.10 -m venv venv
 ```
 
 ---

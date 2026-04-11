@@ -59,6 +59,12 @@ Ela permite **cadastrar clientes, simular empréstimos e consultar histórico**,
 
 ---
 
+# API de Análise de Crédito com Machine Learning
+
+**Dataset:** https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data
+
+---
+
 ## Como Executar
 
 ### Pré-requisitos
@@ -68,22 +74,30 @@ Ela permite **cadastrar clientes, simular empréstimos e consultar histórico**,
 
 ---
 
-### Verificar versão do Python (esperado Python 3.10)
+### Verificar versão do Python
 
 ```bash
 python --version
 ```
 
-Caso necessário:
+---
 
-* Windows: https://www.python.org/downloads/release/python-31011/
-* Linux:
+### Instalar Python 3.10 (se necessário)
+
+**Windows**
+
+Baixe o instalador oficial do Python 3.10:  
+https://www.python.org/downloads/release/python-31011/
+
+> ⚠️ Durante a instalação, marque a opção **"Add Python to PATH"**
+
+**Linux**
 
 ```bash
 sudo apt install python3.10
 ```
 
-* macOS:
+**macOS**
 
 ```bash
 brew install python@3.10
@@ -91,45 +105,83 @@ brew install python@3.10
 
 ---
 
-### Instalação
+## Instalação
+
+### 1. Acessar o diretório
 
 ```bash
-# Entrar no diretório do backend
 cd Sprint\ 4/MVP/Back
+```
 
-# Criar ambiente virtual
+---
+
+### 2. Criar ambiente virtual
+
+```bash
 python -m venv venv
+```
 
-# Ativar ambiente virtual
+---
 
-# Windows (PowerShell)
+### 3. Ativar ambiente virtual
+
+**Windows (PowerShell)**
+
+```bash
 .\venv\Scripts\activate
+```
 
-# Windows (CMD)
+**Windows (CMD)**
+
+```bash
 venv\Scripts\activate.bat
+```
 
-# Linux/macOS
+**Linux/macOS**
+
+```bash
 source venv/bin/activate
+```
 
-# Instalar dependências
+---
+
+### 4. Confirmar versão correta
+
+```bash
+python --version
+```
+
+---
+
+### 5. Instalar dependências
+
+```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-### Executar a API
+## Executar a API
+
+### Produção
 
 ```bash
-# Produção
 flask run --host 0.0.0.0 --port 5000
+```
 
-# Desenvolvimento (recomendado)
+---
+
+### Desenvolvimento (com reload automático)
+
+```bash
 flask run --host 0.0.0.0 --port 5000 --reload
 ```
 
-Acesse a documentação:
+---
 
-```
+### Acessar documentação
+
+```bash
 http://localhost:5000/openapi/swagger
 ```
 
@@ -137,22 +189,47 @@ http://localhost:5000/openapi/swagger
 
 ## Testes
 
+### Rodar todos os testes
+
 ```bash
-# Rodar todos os testes
 pytest tests/ -v
+```
 
-# Testes específicos
+---
+
+### Testes específicos
+
+```bash
 pytest tests/test_model_accuracy.py -v
+```
+
+```bash
 pytest tests/test_model_mock.py -v
+```
 
-# Cobertura (terminal)
+---
+
+### Cobertura no terminal
+
+```bash
 pytest tests/ -v --cov=services --cov-report=term
+```
 
-# Cobertura (HTML)
+---
+
+### Cobertura em HTML
+
+```bash
 pytest tests/ -v --cov=services --cov-report=html
 ```
 
 ---
+
+## Observações
+
+* O projeto **depende especificamente do Python 3.10**
+* O modelo já está treinado e pronto para uso (`.pkl`)
+* O banco SQLite é criado automaticamente na primeira execução
 
 ## Estrutura do Projeto
 
@@ -186,15 +263,6 @@ Back/
 ├── requirements.txt
 └── .gitignore
 ```
-
----
-
-## Observações
-
-* O projeto **depende especificamente do Python 3.10**
-* O modelo já está treinado e pronto para uso (`.pkl`)
-* O banco SQLite é criado automaticamente na primeira execução
-
 ---
 
 ## Licença
@@ -203,6 +271,6 @@ MIT License
 
 ---
 
-## Autor
+## Autor - Fernando Oliveira
 
 Projeto desenvolvido para fins acadêmicos (PUC-RJ)

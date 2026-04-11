@@ -14,3 +14,40 @@
 [2026-04-09 22:02:20,443] INFO _log() L96   127.0.0.1 - - [09/Apr/2026 22:02:20] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\venv\lib\site-packages\werkzeug\_internal.py L96  
 [2026-04-09 22:02:36,007] INFO _log() L96   127.0.0.1 - - [09/Apr/2026 22:02:36] "OPTIONS /getLoanHistory HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\venv\lib\site-packages\werkzeug\_internal.py L96  
 [2026-04-09 22:02:36,320] INFO _log() L96   127.0.0.1 - - [09/Apr/2026 22:02:36] "GET /getLoanHistory HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-10 23:09:50,279] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.208:5000 - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-10 23:09:50,279] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-10 23:09:50,280] INFO _log() L96    * Restarting with stat - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-10 23:56:03,071] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.208:5000 - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-10 23:56:03,072] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-10 23:56:03,073] INFO _log() L96    * Restarting with stat - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-10 23:56:37,103] INFO get_information() L38   Informações de frontend enviadas com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\info_endpoints.py L38  
+[2026-04-10 23:56:37,104] INFO _log() L96   127.0.0.1 - - [10/Apr/2026 23:56:37] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 00:01:54,935] INFO get_information() L38   Informações de frontend enviadas com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\info_endpoints.py L38  
+[2026-04-11 00:01:54,935] INFO _log() L96   127.0.0.1 - - [11/Apr/2026 00:01:54] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 00:02:10,375] INFO _log() L96   127.0.0.1 - - [11/Apr/2026 00:02:10] "OPTIONS /getLoanHistory HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 00:02:10,689] INFO _log() L96   127.0.0.1 - - [11/Apr/2026 00:02:10] "GET /getLoanHistory HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 01:05:47,788] INFO get_information() L38   Informações de frontend enviadas com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\info_endpoints.py L38  
+[2026-04-11 01:05:47,789] INFO _log() L96   127.0.0.1 - - [11/Apr/2026 01:05:47] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 01:07:33,870] INFO get_information() L38   Informações de frontend enviadas com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\info_endpoints.py L38  
+[2026-04-11 01:07:33,871] INFO _log() L96   127.0.0.1 - - [11/Apr/2026 01:07:33] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 01:07:39,268] INFO get_information() L38   Informações de frontend enviadas com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\info_endpoints.py L38  
+[2026-04-11 01:07:39,269] INFO _log() L96   127.0.0.1 - - [11/Apr/2026 01:07:39] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 01:07:40,706] INFO get_information() L38   Informações de frontend enviadas com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\info_endpoints.py L38  
+[2026-04-11 01:07:40,706] INFO _log() L96   127.0.0.1 - - [11/Apr/2026 01:07:40] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 01:08:11,369] INFO get_information() L38   Informações de frontend enviadas com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\info_endpoints.py L38  
+[2026-04-11 01:08:11,370] INFO _log() L96   127.0.0.1 - - [11/Apr/2026 01:08:11] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 01:08:19,381] INFO check_cpf() L207  CPF 11111111111 não encontrado na base - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\client_endpoints.py L207 
+[2026-04-11 01:08:19,382] INFO _log() L96   127.0.0.1 - - [11/Apr/2026 01:08:19] "POST /checkCPF HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 01:08:24,332] INFO get_information() L38   Informações de frontend enviadas com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\info_endpoints.py L38  
+[2026-04-11 01:08:24,333] INFO _log() L96   127.0.0.1 - - [11/Apr/2026 01:08:24] "GET /getInformation HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 01:08:37,669] INFO check_cpf() L207  CPF 11111111111 não encontrado na base - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\client_endpoints.py L207 
+[2026-04-11 01:08:37,670] INFO _log() L96   127.0.0.1 - - [11/Apr/2026 01:08:37] "POST /checkCPF HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 01:10:29,115] INFO check_cpf() L207  CPF 11111111111 não encontrado na base - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\client_endpoints.py L207 
+[2026-04-11 01:10:29,115] INFO _log() L96   127.0.0.1 - - [11/Apr/2026 01:10:29] "POST /checkCPF HTTP/1.1" 200 - - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\BACK\venv\lib\site-packages\werkzeug\_internal.py L96  
+[2026-04-11 01:10:29,385] INFO register_client() L155  Cliente 11111111111 cadastrado com sucesso - call_trace=D:\Fernando\Ensino\Pos PUC Rio\Sprint 4\MVP\Back\endpoints\client_endpoints.py L155 

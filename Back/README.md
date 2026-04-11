@@ -1,145 +1,276 @@
-# Back-end de Análise de Crédito para Empréstimos com Machine Learning
+# API de Análise de Crédito com Machine Learning
 
-**Dataset:** [Loan Approval Classification Dataset](https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data)
-
----
-
-## 📋 Funcionalidades da API
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| **GET** | `/getInformation` | Obtém informações para preenchimento de campos dropdown (educação, moradia, objetivo do empréstimo) |
-| **POST** | `/registerClient` | Inclui um novo cliente no banco de dados |
-| **POST** | `/checkCPF` | Verifica se um CPF já está cadastrado na tabela de clientes |
-| **POST** | `/registerLoanData` | Registra um pedido de empréstimo e retorna a análise de aprovação usando o modelo de ML treinado |
-| **GET** | `/getLoanHistory` | Retorna o histórico de todos os testes de empréstimo realizados |
-| **DELETE** | `/deleteLoan` | Remove um teste de empréstimo a partir do seu ID |
+**Dataset:** https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Sobre a API
+
+Esta API é responsável por realizar a **análise de crédito para empréstimos**, combinando:
+
+* **Regras de negócio**
+* **Modelo de Machine Learning (CART)**
+
+Ela permite **cadastrar clientes, simular empréstimos e consultar histórico**, retornando decisões de crédito em tempo real.
+
+---
+
+## Endpoints
+
+| Método     | Endpoint            | Descrição                                          |
+| ---------- | ------------------- | -------------------------------------------------- |
+| **GET**    | `/getInformation`   | Dados para dropdowns (educação, moradia, objetivo) |
+| **POST**   | `/registerClient`   | Cadastro de novo cliente                           |
+| **POST**   | `/checkCPF`         | Verifica se o CPF já existe                        |
+| **POST**   | `/registerLoanData` | Registra empréstimo e retorna análise do modelo    |
+| **GET**    | `/getLoanHistory`   | Lista histórico de simulações                      |
+| **DELETE** | `/deleteLoan`       | Remove empréstimo por ID                           |
+
+---
+
+## Regra de Negócio Importante
+
+* Clientes com **inadimplência anterior (`previous_default`)** são automaticamente **negados**
+* O modelo de ML **não é executado nesses casos**
+
+---
+
+## Tecnologias
 
 ### Backend
-- **Python 3.10** (versão específica necessária para compatibilidade)
-- **Flask** - Microframework web para a API
-- **SQLite** - Banco de dados relacional
-- **SQLAlchemy** - ORM para interação com o banco
-- **Pydantic** - Validação de dados
-- **Joblib** - Carregamento do modelo de ML treinado
 
-### Machine Learning (Modelo Exportado)
-- **Scikit-learn** - Modelo CART (Decision Tree)
-- **Pandas / NumPy** - Manipulação de dados
-- **MinMaxScaler** - Normalização dos dados
+* Python 3.10 *(obrigatório)*
+* Flask
+* SQLite
+* SQLAlchemy
+* Pydantic
+* Joblib
+
+### Machine Learning
+
+* Scikit-learn *(Decision Tree - CART)*
+* Pandas / NumPy
+* MinMaxScaler
 
 ### Testes
-- **Pytest** - Framework para testes unitários e de integração
-- **Pytest-cov** - Relatório de cobertura de testes
+
+* Pytest
+* Pytest-cov
 
 ---
 
-## 🚀 Como Executar o Projeto
+# API de Análise de Crédito com Machine Learning
+
+**Dataset:** https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data
+
+---
+
+## Como Executar
 
 ### Pré-requisitos
 
-- **Python 3.10** (versão obrigatória - o projeto pode não funcionar com outras versões do Python)
-- `pip` (gerenciador de pacotes do Python)
+* Python **3.10**
+* pip
 
-### Verificando a versão do Python
+---
+
+### Verificar versão do Python
 
 ```bash
 python --version
-# Deve mostrar: Python 3.10.x
-Se você não tiver o Python 3.10 instalado:
+```
 
-Windows: Baixe em python.org/downloads/release/python-31011/
+---
 
-Linux: sudo apt install python3.10
+### Instalar Python 3.10 (se necessário)
 
-macOS: brew install python@3.10
+**Windows**
 
-Passo a passo para execução
-1. Acessar o diretório do backend
+Baixe o instalador oficial do Python 3.10:  
+https://www.python.org/downloads/release/python-31011/
 
-bash
+> ⚠️ Durante a instalação, marque a opção **"Add Python to PATH"**
+
+**Linux**
+
+```bash
+sudo apt install python3.10
+```
+
+**macOS**
+
+```bash
+brew install python@3.10
+```
+
+---
+
+## Instalação
+
+### 1. Acessar o diretório
+
+```bash
 cd Sprint\ 4/MVP/Back
-2. Criar o ambiente virtual
+```
 
-bash
-# Windows
-py -3.10 -m venv venv
+---
 
-# Linux/macOS
-python3.10 -m venv venv
+### 2. Criar ambiente virtual
 
-# Ou se o Python 3.10 for o padrão
+```bash
 python -m venv venv
-3. Ativar o ambiente virtual
+```
 
-Sistema	Comando
-Windows (PowerShell)	.\venv\Scripts\activate
-Windows (CMD)	venv\Scripts\activate.bat
-Linux/macOS	source venv/bin/activate
-Após ativação, você verá (venv) no início da linha do terminal.
+---
 
-4. Verificar se o ambiente está ativo
+### 3. Ativar ambiente virtual
 
-bash
+**Windows (PowerShell)**
+
+```bash
+.\venv\Scripts\activate
+```
+
+**Windows (CMD)**
+
+```bash
+venv\Scripts\activate.bat
+```
+
+**Linux/macOS**
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+### 4. Confirmar versão correta
+
+```bash
 python --version
-# Deve mostrar: Python 3.10.x
-5. Instalar as dependências
+```
 
-bash
+---
+
+### 5. Instalar dependências
+
+```bash
 pip install -r requirements.txt
-6. Executar a API
+```
 
-bash
-# Modo normal (sem reload)
+---
+
+## Executar a API
+
+### Produção
+
+```bash
 flask run --host 0.0.0.0 --port 5000
+```
 
-# Modo desenvolvimento (com reload automático - recomendado)
+---
+
+### Desenvolvimento (com reload automático)
+
+```bash
 flask run --host 0.0.0.0 --port 5000 --reload
-O parâmetro --reload faz o servidor reiniciar automaticamente sempre que você modificar algum arquivo do código fonte.
+```
 
-7. Verificar se a API está funcionando
+---
 
-Abra o navegador e acesse: http://localhost:5000/openapi/swagger
+### Acessar documentação
 
-🧪 Executando os Testes
-bash
-# Executar todos os testes
+```bash
+http://localhost:5000/openapi/swagger
+```
+
+---
+
+## Testes
+
+### Rodar todos os testes
+
+```bash
 pytest tests/ -v
+```
 
-# Executar testes específicos
+---
+
+### Testes específicos
+
+```bash
 pytest tests/test_model_accuracy.py -v
+```
+
+```bash
 pytest tests/test_model_mock.py -v
+```
 
-# Executar com relatório de cobertura
+---
+
+### Cobertura no terminal
+
+```bash
 pytest tests/ -v --cov=services --cov-report=term
+```
 
-# Executar com relatório HTML de cobertura
+---
+
+### Cobertura em HTML
+
+```bash
 pytest tests/ -v --cov=services --cov-report=html
-📁 Estrutura do Backend
-bash
+```
+
+---
+
+## Observações
+
+* O projeto **depende especificamente do Python 3.10**
+* O modelo já está treinado e pronto para uso (`.pkl`)
+* O banco SQLite é criado automaticamente na primeira execução
+
+## Estrutura do Projeto
+
+```bash
 Back/
-├── app.py                  # Arquivo principal da aplicação Flask
-├── model/                  # Modelos SQLAlchemy (Client, LoanData)
-│   ├── base.py             # Base declarativa do SQLAlchemy
-│   ├── client.py           # Modelo Client
-│   └── loan_data.py        # Modelo LoanData
-├── schemas.py              # Schemas Pydantic para validação
-├── services/               # Lógica de negócio
-│   └── loan_predictor.py   # Predictor do modelo de ML
-├── ml_model/               # Modelo de ML treinado
-│   ├── modelo_completo_cart.pkl   # Modelo serializado
-│   └── modelo_metadata.json       # Metadados do modelo
-├── database/               # Banco de dados SQLite (criado automaticamente)
+├── app.py                     # API Flask
+├── model/                     # Modelos SQLAlchemy
+│   ├── base.py
+│   ├── client.py
+│   └── loan_data.py
+│
+├── schemas.py                 # Validação (Pydantic)
+│
+├── services/                  # Regras de negócio
+│   └── loan_predictor.py
+│
+├── ml_model/                  # Modelo ML
+│   ├── modelo_completo_cart.pkl
+│   └── modelo_metadata.json
+│
+├── database/
 │   └── db.sqlite3
-├── tests/                  # Testes unitários e de integração
-│   ├── fixtures/           # Dados de teste
-│   ├── test_conversions.py # Testes de conversão
-│   ├── test_model_accuracy.py # Testes de acurácia
-│   ├── test_model_import.py    # Testes de importação
-│   └── test_model_mock.py      # Testes com dados mock
-├── requirements.txt        # Dependências do projeto
-└── .gitignore              # Arquivos ignorados pelo Git
+│
+├── tests/
+│   ├── fixtures/
+│   ├── test_conversions.py
+│   ├── test_model_accuracy.py
+│   ├── test_model_import.py
+│   └── test_model_mock.py
+│
+├── requirements.txt
+└── .gitignore
+```
+---
+
+## Licença
+
+MIT License
+
+---
+
+## Autor - Fernando Oliveira
+
+Projeto desenvolvido para fins acadêmicos (PUC-RJ)

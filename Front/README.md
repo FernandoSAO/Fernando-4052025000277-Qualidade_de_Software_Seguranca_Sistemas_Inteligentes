@@ -59,11 +59,12 @@ A aplicação foi desenvolvida utilizando apenas tecnologias nativas da web, sem
 
 ```bash
 Front/
-├── index.html          # Página principal
-├── components/         # Componentes HTML (header e sidebar)
-├── css/                # Arquivos de estilo
-├── js/                 # Scripts JavaScript
-└── pages/              # Páginas adicionais
+├── index.html          # Página principal da aplicação
+├── components/         # Componentes reutilizáveis (ex: header, sidebar)
+├── css/                # Arquivos de estilo (CSS)
+├── js/                 # Scripts JavaScript da aplicação
+├── pages/              # Páginas adicionais
+└── README.md           # Documentação do frontend
 ```
 
 ---

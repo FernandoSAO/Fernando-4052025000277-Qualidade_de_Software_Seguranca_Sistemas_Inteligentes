@@ -77,21 +77,33 @@ O projeto está dividido em três partes principais:
 
 ## 📂 Estrutura do Projeto
 
-```bash
 .
-├── Back/                          # Backend da aplicação
-│   ├── app.py                     # Arquivo principal da API Flask
-│   ├── model/                     # Modelos SQLAlchemy (Client, LoanData, LoanPredictor)
-│   ├── schemas.py                 # Schemas Pydantic para validação
-│   ├── ml_model/                  # Modelo de ML treinado (.pkl) e metadados
-│   ├── tests/                     # Testes unitários e de integração (pytest)
-│   └── requirements.txt           # Dependências do projeto Python
-├── Front/                         # Frontend da aplicação
-│   ├── index.html                 # Página principal
-│   ├── css/                       # Componentes HTML (header e sidebar)
-│   ├── css/                       # Estilos CSS
-│   ├── js/                        # Arquivos JavaScript modulares
-│   └── pages/                     # Páginas HTML
-├── Analise_ML/                    # (Recomendado) Notebook do Google Colab
-│   └── loan_analysis.ipynb        # Análise, treinamento e exportação do modelo
-└── README.md                      # Documentação do projeto
+├── Back/                                   # Backend da aplicação
+│   ├── app.py                              # Arquivo principal da API (Flask)
+│   ├── database/                           # Base de dados do sistema (criada automaticamente na 1ª execução)
+│   ├── endpoints/                          # Definição dos endpoints da API
+│   ├── model/                              # Modelos SQLAlchemy (Client, LoanData, LoanPredictor)
+│   ├── schemas.py                          # Schemas Pydantic para validação de dados
+│   ├── ml_model/                           # Modelo de ML treinado (.pkl) e metadados
+│   ├── tests/                              # Testes unitários e de integração (pytest)
+│   ├── utilities/                          # Módulos auxiliares reutilizáveis
+│   ├── README.md                           # Documentação detalhada do backend
+│   └── requirements.txt                    # Dependências do projeto Python
+│
+├── Front/                                  # Frontend da aplicação
+│   ├── index.html                          # Página principal
+│   ├── components/                         # Componentes HTML (ex: header, sidebar)
+│   ├── css/                                # Arquivos de estilo (CSS)
+│   ├── js/                                 # Scripts JavaScript modulares
+│   ├── pages/                              # Páginas HTML da aplicação
+│   └── README.md                           # Documentação detalhada do frontend
+│
+├── Analise_ML_Google_Collab/               # Arquivos relacionados à análise e treinamento do modelo
+│   ├── mvp_credit_analysis_training.ipynb  # Notebook do Google Colab (executado)
+│   ├── feature_columns.json                # Lista de features utilizadas no modelo
+│   ├── modelo_completo_cart.pkl            # Modelo treinado (CART)
+│   └── modelo_metadata.json                # Metadados do modelo (parâmetros, métricas, etc.)
+│
+├── loan_data.csv                           # Dataset utilizado (link disponível no README)
+│
+└── README.md                               # Documentação geral do projeto

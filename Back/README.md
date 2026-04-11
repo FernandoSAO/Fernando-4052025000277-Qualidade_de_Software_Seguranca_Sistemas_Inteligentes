@@ -235,33 +235,40 @@ pytest tests/ -v --cov=services --cov-report=html
 
 ```bash
 Back/
-├── app.py                     # API Flask
-├── model/                     # Modelos SQLAlchemy
-│   ├── base.py
-│   ├── client.py
-│   └── loan_data.py
+├── app.py                          # Ponto de entrada da API (Flask)
 │
-├── schemas.py                 # Validação (Pydantic)
+├── model/                          # Modelos de dados (SQLAlchemy)
+│   ├── base.py                     # Configuração base dos modelos
+│   ├── client_model.py             # Modelo de cliente
+│   ├── loan_data.py                # Modelo de dados do empréstimo
+│   └── loan_predictor.py           # Integração com o modelo de ML
 │
-├── services/                  # Regras de negócio
-│   └── loan_predictor.py
+├── endpoints/                      # Endpoints da API
+│   ├── client_endpoints.py         # Operações relacionadas a clientes
+│   ├── loan_endpoints.py           # Operações de empréstimo
+│   └── info_endpoints.py           # Endpoints informativos/auxiliares
 │
-├── ml_model/                  # Modelo ML
-│   ├── modelo_completo_cart.pkl
-│   └── modelo_metadata.json
+├── schemas.py                      # Schemas para validação (Pydantic)
+│
+├── ml_model/                       # Modelo de Machine Learning e artefatos
+│   ├── modelo_completo_cart.pkl    # Modelo treinado (CART)
+│   ├── feature_columns.json        # Features utilizadas
+│   └── modelo_metadata.json        # Metadados (parâmetros, métricas)
 │
 ├── database/
-│   └── db.sqlite3
+│   └── db.sqlite3                  # Base de dados SQLite
 │
-├── tests/
-│   ├── fixtures/
-│   ├── test_conversions.py
-│   ├── test_model_accuracy.py
-│   ├── test_model_import.py
-│   └── test_model_mock.py
+├── utilities/                      # Funções auxiliares reutilizáveis
 │
-├── requirements.txt
-└── .gitignore
+├── tests/                          # Testes (pytest)
+│   ├── fixtures/                   # Dados auxiliares para testes
+│   ├── test_conversions.py         # Testes de transformação de dados
+│   ├── test_model_accuracy.py      # Testes de desempenho do modelo
+│   └── test_model_mock.py          # Testes com mock do modelo
+│
+├── requirements.txt                # Dependências do projeto
+├── .gitignore                      # Arquivos ignorados pelo Git
+└── README.md                       # Documentação do backend
 ```
 ---
 

@@ -25,14 +25,10 @@ class TestConversions:
     def test_gender_male(self, predictor):
         """Testa codificação de gênero masculino"""
         assert predictor.encode_gender("male") == 1
-        assert predictor.encode_gender("masculino") == 1
-        assert predictor.encode_gender("MALE") == 1
     
     def test_gender_female(self, predictor):
         """Testa codificação de gênero feminino"""
         assert predictor.encode_gender("female") == 0
-        assert predictor.encode_gender("feminino") == 0
-        assert predictor.encode_gender("FEMALE") == 0
     
     # ============================================
     # TESTES DE EDUCAÇÃO

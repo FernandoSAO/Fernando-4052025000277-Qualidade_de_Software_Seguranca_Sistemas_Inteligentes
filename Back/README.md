@@ -91,7 +91,7 @@ brew install python@3.10
 
 ---
 
-### 📦 Instalação
+### Instalação
 
 ```bash
 # Entrar no diretório do backend
@@ -117,7 +117,7 @@ pip install -r requirements.txt
 
 ---
 
-### ▶️ Executar a API
+### Executar a API
 
 ```bash
 # Produção
@@ -127,7 +127,7 @@ flask run --host 0.0.0.0 --port 5000
 flask run --host 0.0.0.0 --port 5000 --reload
 ```
 
-🔗 Acesse a documentação:
+Acesse a documentação:
 
 ```
 http://localhost:5000/openapi/swagger
@@ -135,7 +135,7 @@ http://localhost:5000/openapi/swagger
 
 ---
 
-## 🧪 Testes
+## Testes
 
 ```bash
 # Rodar todos os testes
@@ -154,7 +154,7 @@ pytest tests/ -v --cov=services --cov-report=html
 
 ---
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```bash
 Back/
@@ -189,20 +189,20 @@ Back/
 
 ---
 
-## ⚡ Observações
+## Observações
 
-* ⚠️ O projeto **depende especificamente do Python 3.10**
-* 📦 O modelo já está treinado e pronto para uso (`.pkl`)
-* 🔄 O banco SQLite é criado automaticamente na primeira execução
+* O projeto **depende especificamente do Python 3.10**
+* O modelo já está treinado e pronto para uso (`.pkl`)
+* O banco SQLite é criado automaticamente na primeira execução
 
 ---
 
-## 📄 Licença
+## Licença
 
 MIT License
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 Projeto desenvolvido para fins acadêmicos (PUC-RJ)

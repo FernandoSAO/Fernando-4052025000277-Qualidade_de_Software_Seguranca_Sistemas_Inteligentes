@@ -47,7 +47,6 @@
 
 ### Verificando a versão do Python
 
-```bash
 python --version
 # Deve mostrar: Python 3.10.x
 Se você não tiver o Python 3.10 instalado:

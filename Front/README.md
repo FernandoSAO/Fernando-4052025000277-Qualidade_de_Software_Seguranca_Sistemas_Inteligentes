@@ -1,21 +1,108 @@
-# Front-end de Aprovação de Empréstimo com base no treinamento com machine learning do dataset Loan Approval Classification
+# Front-end de Aprovação de Empréstimo
 
-link dataset: https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data
-
-Tem como funcionalidades:
-
-    - obtém informações para preenchimento de campos dropdown para o frontend (URL: /getInformation  método: get);
-    - inclusão de clientes ao banco de dados (URL: /registerClient  método: post);
-    - verificação se cpf está na tabela de clientes (URL: /checkCPF  método: post);
-    - inclusão de dados de empréstimo do cliente ao banco de dados com a verificação de aprovação utilizando o modelo treinado
-    (URL: /registerLoanData  método: post);
-    - obtém o histórico de testes de empréstimos feitos do banco de dados (URL: /getLoanHistory  método: get);
-    - remove teste de empréstimo a partir do id do empréstimo (URL: /deleteLoan  método: delete);
-
-O sitema foi contruído em python utilizando como base dados o SQLite e mircoframework flask.
+**Dataset:** https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data
 
 ---
 
-## Como executar 
+## Sobre o Projeto
 
-Recomendado o uso de ferramentas como o Go Live do Vscode 
+Este front-end é responsável pela interface de interação com o sistema de análise de crédito. Ele consome a API backend para permitir o cadastro de clientes, simulação de empréstimos e visualização de histórico.
+
+A aplicação foi desenvolvida utilizando apenas tecnologias nativas da web, sem uso de bibliotecas externas.
+
+---
+
+## Funcionalidades
+
+* Obter informações para preenchimento de campos dropdown
+
+  * Endpoint: `/getInformation`
+  * Método: GET
+
+* Cadastro de clientes no banco de dados
+
+  * Endpoint: `/registerClient`
+  * Método: POST
+
+* Verificação de CPF já cadastrado
+
+  * Endpoint: `/checkCPF`
+  * Método: POST
+
+* Simulação e registro de empréstimos com análise do modelo de Machine Learning
+
+  * Endpoint: `/registerLoanData`
+  * Método: POST
+
+* Consulta ao histórico de empréstimos realizados
+
+  * Endpoint: `/getLoanHistory`
+  * Método: GET
+
+* Remoção de registros de empréstimos
+
+  * Endpoint: `/deleteLoan`
+  * Método: DELETE
+
+---
+
+## Tecnologias Utilizadas
+
+* HTML5
+* CSS3
+* JavaScript (ES6+)
+* Fetch API (comunicação com o backend)
+
+---
+
+## Estrutura do Projeto
+
+```bash
+Front/
+├── index.html          # Página principal
+├── css/                # Arquivos de estilo
+├── js/                 # Scripts JavaScript
+└── pages/              # Páginas adicionais
+```
+
+---
+
+## Como Executar
+
+Este projeto não utiliza servidor próprio. Para evitar problemas com CORS e requisições locais, é necessário rodar um servidor estático.
+
+### Opção recomendada (VS Code)
+
+Utilize a extensão **Live Server**:
+
+1. Instale a extensão "Live Server" no VS Code
+2. Clique com o botão direito no arquivo `index.html`
+3. Selecione **"Open with Live Server"**
+
+---
+
+### Alternativa com Python
+
+```bash
+python -m http.server 5500
+```
+
+Acesse no navegador:
+
+```
+http://localhost:5500
+```
+
+---
+
+## Observações
+
+* O backend deve estar em execução para que o front-end funcione corretamente
+* As requisições são feitas via Fetch API diretamente para a API Flask
+* Não há uso de frameworks ou bibliotecas externas
+
+---
+
+## Autor - Fernando Oliveira
+
+Projeto desenvolvido para fins acadêmicos (PUC-RJ)

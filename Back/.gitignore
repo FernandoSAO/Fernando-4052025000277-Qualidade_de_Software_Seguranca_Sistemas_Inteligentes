@@ -16,3 +16,6 @@ htmlcov/
 venv/
 .venv/
 env/
+
+# Base de dados
+database/db.sqlite3
